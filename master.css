@@ -1,0 +1,251 @@
+
+    @font-face { font-family: inter; src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf'); } 
+*{
+    box-sizing: border-box;
+    font-family: 'inter';
+    scroll-behavior: smooth;
+}
+.conterner{
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+/* Small */
+@media(min-width:780px)  {
+    .conterner{
+        width: 750px;
+    }
+}
+/* Mediam */
+@media(min-width:992px) {
+    .conterner{
+        width: 970px;
+    }
+    
+}
+/* Large */
+@media(min-width:1200px){
+    .conterner{
+        width: 1120px;
+    }
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.links{
+    display: flex;
+    transition: 0.3s;
+}
+.header .menue{
+    display: none;
+}
+.links li{
+    list-style: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right:20px;
+    cursor: pointer;
+}
+@media (max-width:750px){
+    .links{
+        position: absolute;
+        top: 0px;
+        right:0px;
+        width: 50%;
+        background-color: white;
+        height: 100vh;
+        flex-direction: column;
+        margin: 0px;
+        display: none;
+    }
+    
+    .links li{
+        padding: 20px 0px;
+    }
+    .links li:nth-child(1){
+        margin-top: 50px;
+    }
+    .header .menue{
+        display: unset;
+        z-index: 3;
+        size: 15px;
+    }
+}
+@media(min-width:751px){
+    .links{
+        display:flex;
+    }
+}
+.links li:hover{
+    color: hsl(35, 77%, 62%);
+}
+.links li:last-child{
+margin: 0px;
+}
+.main{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-areas: "photo photo photo photo new new";
+    gap: 20px;
+}
+
+@media(max-width:750px){
+    .main{
+    display: flex;
+    flex-direction: column;
+    }
+}
+.main1{
+grid-area: photo;
+}
+
+.main1 img{
+    width: 100%;
+}
+@media(max-width:750px){
+    .main1 img{
+        height: 200px;
+    }
+}
+.main1 .text{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.main1 .text h3{
+font-size: 45px;
+width: 40%;
+font-weight: 800;
+margin: 0px;
+color: hsl(240, 95%, 7%)
+}
+@media(max-width:991px){
+    .main1 .text h3{
+        font-size: 35px;
+    }
+}
+.main1 .text .readmore{
+    width: 55%;
+}
+@media(max-width:750px){
+    .main1 .text{
+    display: flex;
+    flex-direction: column;
+    }
+    .main1 .text h3{
+        width: 100%;
+    }
+    .main1 .text .readmore{
+        width: 100%;
+    }
+}
+.main1 .text .readmore p{
+font-size: 15px;
+color: hsl(236, 13%, 42%);
+margin: 0px;
+}
+.main1 .text .readmore a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color:  hsl(35, 77%, 62%);
+    padding: 10px 25px;
+    margin: 17px 0px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.main1 .text .readmore a:hover{
+    background-color: hsl(240, 100%, 5%);
+}
+.main2{
+    grid-area: new;
+    background-color: hsl(240, 100%, 5%);
+    margin-bottom: 50px;
+}
+@media(max-width:991px){
+    .main2{
+        margin-bottom: 0px;
+    }
+}
+.main2 .textnew{
+    padding-left: 10px ;
+}
+.main2 h2{
+    
+    color:hsl(35, 77%, 62%);
+    font-size: 35px;
+    font-weight: 700;
+}
+.main2 h3{
+    color: white;
+    font-size: 16px
+}
+.main2 h3:hover{
+    color:hsl(35, 77%, 62%);
+    cursor: pointer;
+}
+.main2 p{
+position: relative;
+color: hsl(233, 8%, 79%);
+padding-bottom: 30px;
+font-size: 12px;
+width: 90%;
+}
+@media(max-width:991px){
+    .main2 p{
+        margin-bottom: 0px;
+    }
+}
+.main2 p:not(:last-child)::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: hsl(233, 8%, 79%);
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: 30px;
+    gap: 20px;
+}
+@media (max-width:750px){
+.cards{
+    margin-top: 30px;
+
+}
+}
+.cards .box{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.cards .box img{
+    width: 90px;
+    margin-right: 15px;
+}
+.cards .box .textbox{
+    width: 60%;
+}
+.cards .box .textbox span{
+    color: hsl(233, 8%, 79%);
+    font-size: 27px
+}
+.cards .box .textbox p {
+    margin: 0px;
+    color: hsl(233, 8%, 79%);
+    font-size: 12px;
+    font-weight: bold
+}
+.cards .box .textbox h3{
+font-size: 15px;
+}
